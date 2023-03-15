@@ -1,0 +1,8 @@
+.myCard {
+  width: 18rem;
+  height: 25rem;
+  background-color: azure;
+  border-radius: 1rem;
+  border: 2px solid darkmagenta;
+  flex-basis: auto;
+}
