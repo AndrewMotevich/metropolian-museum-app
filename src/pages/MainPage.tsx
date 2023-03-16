@@ -5,10 +5,10 @@ import React from 'react';
 const MainPage = () => {
   return (
     <div>
-      <MyInput query="search" type="search" placeholder="Search" />
+      <MyInput query-name="search" type="search" placeholder="Search" />
+      <MyInput query-name="search2" type="search" placeholder="Search2" />
       <Cards />
     </div>
   );
 };
-
 export default MainPage;

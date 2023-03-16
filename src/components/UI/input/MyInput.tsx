@@ -1,35 +1,48 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { Component, ChangeEvent } from 'react';
 import classes from './MyInput.module.css';
 type params = {
   [key: string]: string;
-  query: string;
+  'query-name': string;
 };
-const MyInput = (params: params) => {
-  const [value, setValue] = useState('');
+type state = {
+  [key: string]: string;
+};
 
-  useEffect(() => {
-    const savedValue = localStorage.getItem(`${params.query}`) || '';
-    setValue(savedValue);
-    // unmount component
-    return () => {
-      localStorage.setItem(`${params.query}`, `${value}`);
-    };
-  }, []);
-
-  function onChange(e: ChangeEvent) {
-    const newValue = (e.target as HTMLInputElement).value;
-    setValue(newValue);
-    console.log(value);
+class MyInput extends Component<params> {
+  params: params;
+  state: state;
+  constructor(params: params) {
+    super(params);
+    this.params = params;
+    this.state = { value: '' };
   }
 
-  return (
-    <input
-      {...params}
-      onChange={(e: ChangeEvent) => onChange(e)}
-      value={value}
-      className={classes.myInput}
-    />
-  );
-};
+  componentDidMount() {
+    const savedValue = localStorage.getItem(`${this.params['query-name']}`) || '';
+    this.setState({ value: savedValue });
+    console.log(`mount to ${this.params['query-name']}:`, savedValue);
+  }
+
+  componentWillUnmount() {
+    localStorage.setItem(`${this.params['query-name']}`, `${this.state.value}`);
+    console.log(`unmount to ${this.params['query-name']}:`, this.state.value);
+  }
+
+  onChange(e: ChangeEvent) {
+    const newValue = (e.target as HTMLInputElement).value;
+    this.setState({ value: newValue });
+  }
+
+  render() {
+    return (
+      <input
+        {...this.params}
+        onChange={(e: ChangeEvent) => this.onChange(e)}
+        value={this.state.value}
+        className={classes.myInput}
+      />
+    );
+  }
+}
 
 export default MyInput;
