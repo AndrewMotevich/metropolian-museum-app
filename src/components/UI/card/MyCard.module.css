@@ -1,8 +1,46 @@
 .myCard {
   width: 18rem;
   height: 25rem;
-  background-color: azure;
   border-radius: 1rem;
-  border: 2px solid darkmagenta;
-  flex-basis: auto;
+  border: 5px solid #1ceb12;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 2rem;
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
+.icons {
+  width: inherit;
+  display: flex;
+  justify-content: space-around;
+}
+.icons > * {
+  width: 3rem;
+  height: 3rem;
+}
+.icons > *:hover {
+  cursor: pointer;
+  scale: 1.2;
+  transition: all 0.2s ease;
+}
+.nftImage {
+  width: 5rem;
+}
+.myCard:hover > .nftImage {
+  cursor: pointer;
+  scale: 1.5;
+  animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

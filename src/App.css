@@ -3,10 +3,41 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .flex-layout {
+  max-width: inherit;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
+}
+
+.myHeader {
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.myNavigate {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  border: 5px solid #1ceb12;
+}
+
+.myNavigate > * {
+  padding: 0 1rem;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: large;
+}
+
+.myNavigate > *:hover {
+  color: rgba(246, 255, 0, 0.838);
+  transition: all 0.5s ease-out;
 }
