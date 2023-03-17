@@ -5,7 +5,7 @@ type params = {
   'query-name': string;
 };
 
-const MyInput = (params: params) => {
+const MyInputWithHooks = (params: params) => {
   const [value, setValue] = useState('');
 
   useEffect(() => {
@@ -35,4 +35,4 @@ const MyInput = (params: params) => {
   );
 };
 
-export default MyInput;
+export default MyInputWithHooks;
