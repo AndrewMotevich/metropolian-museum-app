@@ -1,15 +1,13 @@
 import React from 'react';
 import '../App.css';
 import MyNav from './UI/navigation/MyNav';
-type props = {
-  [key: string]: string;
-  page: string;
-};
+import { useLocation } from 'react-router-dom';
 
-const Header = (props: props) => {
+const Header = () => {
+  const location = useLocation();
   return (
     <div className="myHeader">
-      <h1>Page: {props.page}</h1>
+      <h1>Page: {location.pathname.slice(1)}</h1>
       <MyNav />
     </div>
   );
