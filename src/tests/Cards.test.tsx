@@ -5,6 +5,6 @@ import Cards from '../components/Cards';
 describe('Cards', () => {
   it('render Cards component', () => {
     render(<Cards />);
-    screen.debug();
+    expect(screen.getAllByText(/MyCard #/i).length).toBeLessThanOrEqual(12);
   });
 });

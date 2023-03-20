@@ -8,7 +8,7 @@ import Header from './Header';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Header />
+      <Header page={'MainPage'} />
       <Routes>
         <Route path="*" element={<Page404 />} />
         <Route path="/" element={<MainPage />} />
