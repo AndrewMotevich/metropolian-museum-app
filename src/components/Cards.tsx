@@ -1,5 +1,5 @@
 import React, { ReactNode, Component } from 'react';
-import MyCard from './UI/card/MyCard';
+import MyCard from './UI/main-card/MyCard';
 
 export default class Cards extends Component {
   getCards(): ReactNode {

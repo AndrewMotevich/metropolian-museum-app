@@ -1,6 +1,6 @@
-import MyInputWithHooks from '../components/UI/input/MyInput-useHooks';
+import MyInputWithHooks from '../components/UI/input-search/MyInput-useHooks';
 import Cards from '../components/Cards';
-import MyInput from '../components/UI/input/MyInput';
+import MyInput from '../components/UI/input-search/MyInput';
 import React from 'react';
 
 const MainPage = () => {

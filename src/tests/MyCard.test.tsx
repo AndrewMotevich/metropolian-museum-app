@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import MyCard from '../components/UI/card/MyCard';
+import MyCard from '../components/UI/main-card/MyCard';
 
 describe('MyCard', () => {
   it('render MyCard component', () => {
