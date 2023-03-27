@@ -7,13 +7,14 @@ import MyInputText from './input-text/MyInputText';
 import classes from './MyForm.module.css';
 import MyInputRadio from './input-radio/MyInputRadio';
 import MyInputFile from './input-file/MyInputFile';
-import { props, state } from './MyFormTypes';
+import { props, state, formCard } from './MyFormTypes';
 
 export default class MyForm extends Component {
   private inputTitle: React.RefObject<HTMLInputElement>;
   private inputBthDate: React.RefObject<HTMLInputElement>;
   private inputCountry: React.RefObject<HTMLSelectElement>;
   private inputCheck: React.RefObject<HTMLInputElement>;
+  private inputImg: React.RefObject<HTMLImageElement>;
   private inputSwitcher: string;
   private inputPhoto: string;
   public state: state;
@@ -27,6 +28,7 @@ export default class MyForm extends Component {
     this.inputBthDate = React.createRef();
     this.inputCountry = React.createRef();
     this.inputCheck = React.createRef();
+    this.inputImg = React.createRef();
     this.inputSwitcher = '';
     this.inputPhoto = '';
     this.state = {
@@ -53,19 +55,28 @@ export default class MyForm extends Component {
 
   handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    this.setState({
-      cardsArray: [
-        ...this.state.cardsArray,
-        {
-          title: (this.inputTitle.current as HTMLInputElement).value,
-          bthDate: (this.inputBthDate.current as HTMLInputElement).value,
-          country: (this.inputCountry.current as HTMLSelectElement).value,
-          allow: (this.inputCheck.current as HTMLInputElement).checked,
-          img: this.inputPhoto,
-          sex: this.inputSwitcher,
-        },
-      ],
-    });
+    const newCard = {
+      title: (this.inputTitle.current as HTMLInputElement).value,
+      bthDate: (this.inputBthDate.current as HTMLInputElement).value,
+      country: (this.inputCountry.current as HTMLSelectElement).value,
+      allow: (this.inputCheck.current as HTMLInputElement).checked,
+      img: this.inputPhoto,
+      sex: this.inputSwitcher,
+    };
+    if (validateFunc(newCard) === 'accept') {
+      this.setState({
+        cardsArray: [...this.state.cardsArray, newCard],
+      });
+      //clear form
+      (this.inputTitle.current as HTMLInputElement).value = '';
+      (this.inputBthDate.current as HTMLInputElement).value = '';
+      (this.inputCountry.current as HTMLSelectElement).value = 'Belarus';
+      (this.inputCheck.current as HTMLInputElement).checked = false;
+      (this.inputImg.current as HTMLImageElement).src = '';
+      (this.inputImg.current as HTMLImageElement).className = classes.hide;
+    } else {
+      alert(validateFunc(newCard));
+    }
   }
 
   getImg(value: string): void {
@@ -85,11 +96,31 @@ export default class MyForm extends Component {
           <MyInputCountry reference={this.inputCountry} />
           <MyInputCheckbox reference={this.inputCheck} />
           <MyInputRadio getSex={this.getSex} />
-          <MyInputFile getImg={this.getImg} />
+          <MyInputFile getImg={this.getImg} reference={this.inputImg} />
           <input type="submit" value="Submit" />
         </form>
         <MyFormCards cardsArray={this.state.cardsArray} />
       </div>
     );
+  }
+}
+
+function validateFunc(object: formCard) {
+  if (object.title === '') {
+    return 'Name should be start with letter and cant be empty';
+  }
+  if (object.bthDate === '') {
+    return 'Birthday cant be empty';
+  }
+  if (object.sex === '') {
+    return 'Sex cant be empty';
+  }
+  if (object.img === '') {
+    return 'Please, add img';
+  }
+  if (object.bthDate === '') {
+    return 'Birthday cant be empty';
+  } else {
+    return 'accept';
   }
 }

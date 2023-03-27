@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import classes from './MyInput.module.css';
 type props = {
   getImg(value: string): void;
+  reference: React.RefObject<HTMLImageElement>;
 };
 
 export default class MyInputFile extends Component<props> {
   inputIMG: React.RefObject<HTMLInputElement>;
   imgRef: React.RefObject<HTMLImageElement>;
   imgSrc: string | ArrayBuffer | null;
+  reference: React.RefObject<HTMLImageElement>;
   props: props;
 
   constructor(props: props) {
@@ -16,6 +18,7 @@ export default class MyInputFile extends Component<props> {
     this.imgRef = React.createRef();
     this.imgSrc = '';
     this.props = props;
+    this.reference = props.reference;
   }
 
   addImgHandler = () => {
@@ -27,8 +30,8 @@ export default class MyInputFile extends Component<props> {
     reader.onload = () => {
       this.imgSrc = reader.result;
       //add img in input
-      (this.imgRef.current as HTMLImageElement).src = this.imgSrc as string;
-      (this.imgRef.current as HTMLImageElement).className = classes.img;
+      (this.reference.current as HTMLImageElement).src = this.imgSrc as string;
+      (this.reference.current as HTMLImageElement).className = classes.img;
       //pass src to parrent
       this.props.getImg(this.imgSrc as string);
     };
@@ -45,7 +48,7 @@ export default class MyInputFile extends Component<props> {
         <div className={classes.container}>
           <label className={classes.label} id="add-img-label" htmlFor="add-single-img">
             +
-            <img ref={this.imgRef} className={classes.hide} src="" alt="img" />
+            <img ref={this.reference} className={classes.hide} src="" alt="img" />
           </label>
           <input
             ref={this.inputIMG}
