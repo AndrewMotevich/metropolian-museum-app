@@ -6,7 +6,7 @@ import MyInputCheckbox from './input-checkbox/MyInputCheckbox';
 import MyInputText from './input-text/MyInputText';
 import classes from './MyForm.module.css';
 import MyInputRadio from './input-radio/MyInputRadio';
-import { MyInputFile } from './input-file/MyInputFile';
+import MyInputFile from './input-file/MyInputFile';
 import { props, state } from './MyFormTypes';
 
 export default class MyForm extends Component {
@@ -14,19 +14,21 @@ export default class MyForm extends Component {
   private inputBthDate: React.RefObject<HTMLInputElement>;
   private inputCountry: React.RefObject<HTMLSelectElement>;
   private inputCheck: React.RefObject<HTMLInputElement>;
-  private inputSwitcher: React.RefObject<HTMLInputElement>;
-  private inputPhoto: React.RefObject<HTMLInputElement>;
+  private inputSwitcher: string;
+  private inputPhoto: string;
   public state: state;
 
   constructor(props: props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.getImg = this.getImg.bind(this);
+    this.getSex = this.getSex.bind(this);
     this.inputTitle = React.createRef();
     this.inputBthDate = React.createRef();
     this.inputCountry = React.createRef();
     this.inputCheck = React.createRef();
-    this.inputSwitcher = React.createRef();
-    this.inputPhoto = React.createRef();
+    this.inputSwitcher = '';
+    this.inputPhoto = '';
     this.state = {
       cardsArray: [
         {
@@ -59,11 +61,18 @@ export default class MyForm extends Component {
           bthDate: (this.inputBthDate.current as HTMLInputElement).value,
           country: (this.inputCountry.current as HTMLSelectElement).value,
           allow: (this.inputCheck.current as HTMLInputElement).checked,
-          img: (this.inputPhoto.current as HTMLInputElement).value,
-          sex: (this.inputSwitcher.current as HTMLInputElement).value,
+          img: this.inputPhoto,
+          sex: this.inputSwitcher,
         },
       ],
     });
+  }
+
+  getImg(value: string): void {
+    this.inputPhoto = value;
+  }
+  getSex(value: string): void {
+    this.inputSwitcher = value;
   }
 
   render() {
@@ -75,8 +84,8 @@ export default class MyForm extends Component {
           <MyInputDate reference={this.inputBthDate} />
           <MyInputCountry reference={this.inputCountry} />
           <MyInputCheckbox reference={this.inputCheck} />
-          <MyInputRadio reference={this.inputSwitcher} />
-          <MyInputFile reference={this.inputPhoto} />
+          <MyInputRadio getSex={this.getSex} />
+          <MyInputFile getImg={this.getImg} />
           <input type="submit" value="Submit" />
         </form>
         <MyFormCards cardsArray={this.state.cardsArray} />

@@ -6,7 +6,7 @@ type props = {
 const MyInputDate = ({ reference }: props) => {
   return (
     <label>
-      Birthday:
+      <strong>Birthday:</strong>
       <input type="date" ref={reference} />
     </label>
   );

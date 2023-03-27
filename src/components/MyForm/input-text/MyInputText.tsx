@@ -6,7 +6,7 @@ type props = {
 const MyInputText = ({ reference }: props) => {
   return (
     <label>
-      Name:
+      <strong>Name:</strong>
       <input type="text" ref={reference} />
     </label>
   );

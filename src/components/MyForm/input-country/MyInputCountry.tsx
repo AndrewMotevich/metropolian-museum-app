@@ -6,7 +6,7 @@ type props = {
 const MyInputCountry = ({ reference }: props) => {
   return (
     <label>
-      Country:
+      <strong>Country:</strong>
       <select ref={reference}>
         <option>Belarus</option>
         <option>Russia</option>

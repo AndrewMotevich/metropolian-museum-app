@@ -25,7 +25,12 @@ const MyFormCard = ({ elem, index }: props) => {
         border: '1px solid black',
       }}
     >
-      <img width="80px" src={elem.img} alt="icon" />
+      <img
+        width="80px"
+        style={{ borderRadius: '5px', height: '80px', width: '80px', objectFit: 'cover' }}
+        src={elem.img}
+        alt="icon"
+      />
       <div>Name: {elem.title}</div>
       <div>Bth date: {elem.bthDate.split('-').reverse().join('-')}</div>
       <div>Country: {elem.country}</div>

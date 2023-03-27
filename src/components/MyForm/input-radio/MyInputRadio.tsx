@@ -1,23 +1,30 @@
 import React from 'react';
 type props = {
-  reference: React.RefObject<HTMLInputElement>;
+  getSex(value: string): void;
 };
 
-const MyInputRadio = ({ reference }: props) => {
+const MyInputRadio = ({ getSex }: props) => {
+  let value = '';
+  const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    value = (e.target as HTMLInputElement).value;
+    getSex(value);
+    console.log(value);
+  };
   return (
     <div>
-      Sex:
-      <label>
+      <strong>Sex:</strong>
+      <br />
+      <label style={{ marginRight: '10px' }}>
+        <input name="sex" type="radio" value="male" onChange={changeValue} />
         male
-        <input type="radio" value="male" ref={reference} />
       </label>
-      <label>
+      <label style={{ marginRight: '10px' }}>
+        <input name="sex" type="radio" value="female" onChange={changeValue} />
         female
-        <input type="radio" value="female" ref={reference} />
       </label>
       <label>
+        <input name="sex" type="radio" value="other" onChange={changeValue} />
         other
-        <input type="radio" value="other" ref={reference} />
       </label>
     </div>
   );

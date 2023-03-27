@@ -5,9 +5,9 @@ type props = {
 
 const MyInputCheckbox = ({ reference }: props) => {
   return (
-    <label>
-      Human:
-      <input type="checkbox" ref={reference} />
+    <label style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <strong>Human check: </strong>
+      <input style={{ width: '40px' }} type="checkbox" ref={reference} />
     </label>
   );
 };
