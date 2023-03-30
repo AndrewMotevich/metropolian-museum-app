@@ -1,65 +1,57 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 import classes from './MyInput.module.css';
 type props = {
   getImg(value: string): void;
   reference: React.RefObject<HTMLImageElement>;
 };
 
-export default class MyInputFile extends Component<props> {
-  inputIMG: React.RefObject<HTMLInputElement>;
-  imgRef: React.RefObject<HTMLImageElement>;
-  imgSrc: string | ArrayBuffer | null;
-  reference: React.RefObject<HTMLImageElement>;
-  props: props;
+import React, { useRef } from 'react';
 
-  constructor(props: props) {
-    super(props);
-    this.inputIMG = React.createRef();
-    this.imgRef = React.createRef();
-    this.imgSrc = '';
-    this.props = props;
-    this.reference = props.reference;
-  }
+const MyInputFile = (properties: props) => {
+  const inputIMG = useRef(null);
+  let imgSrc = '';
+  const props = properties;
+  const reference = props.reference;
 
-  addImgHandler = () => {
-    const imgInputHelper = this.inputIMG.current as HTMLInputElement;
+  const addImgHandler = () => {
+    const imgInputHelper: HTMLInputElement = inputIMG.current as unknown as HTMLInputElement;
     const file = imgInputHelper.files?.item(0);
     if (!file) return;
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
-      this.imgSrc = reader.result;
+      imgSrc = reader.result as string;
       //add img in input
-      (this.reference.current as HTMLImageElement).src = this.imgSrc as string;
-      (this.reference.current as HTMLImageElement).className = classes.img;
+      (reference.current as HTMLImageElement).src = imgSrc as string;
+      (reference.current as HTMLImageElement).className = classes.img;
       //pass src to parrent
-      this.props.getImg(this.imgSrc as string);
+      props.getImg(imgSrc as string);
     };
     imgInputHelper.value = '';
     return;
   };
 
-  render(): React.ReactNode {
-    return (
-      <div className={classes.wrapper}>
-        <p>
-          <strong>Add image</strong>
-        </p>
-        <div className={classes.container}>
-          <label className={classes.label} id="add-img-label" htmlFor="add-single-img">
-            +
-            <img ref={this.reference} className={classes.hide} src="" alt="img" />
-          </label>
-          <input
-            ref={this.inputIMG}
-            className={classes.input}
-            type="file"
-            id="add-single-img"
-            accept="image/jpeg"
-            onChange={this.addImgHandler}
-          />
-        </div>
+  return (
+    <div className={classes.wrapper}>
+      <p>
+        <strong>Add image</strong>
+      </p>
+      <div className={classes.container}>
+        <label className={classes.label} id="add-img-label" htmlFor="add-single-img">
+          +
+          <img ref={reference} className={classes.hide} src="" alt="img" />
+        </label>
+        <input
+          ref={inputIMG}
+          className={classes.input}
+          type="file"
+          id="add-single-img"
+          accept="image/jpeg"
+          onChange={addImgHandler}
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default MyInputFile;
