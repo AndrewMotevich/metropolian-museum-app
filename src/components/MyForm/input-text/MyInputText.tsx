@@ -7,7 +7,7 @@ const MyInputText = ({ reference }: props) => {
   return (
     <label>
       <strong>Name:</strong>
-      <input type="text" ref={reference} />
+      <input minLength={3} type="text" ref={reference} />
     </label>
   );
 };
