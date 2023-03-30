@@ -1,9 +1,21 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import MainPage from '../pages/MainPage';
+import { render, screen } from '@testing-library/react';
+import App from '../App';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
-describe('Roating', () => {
-  it('render main page', () => {
-    render(<MainPage />);
+describe('Routing', () => {
+  it('test router routes', async () => {
+    render(<App />);
+    const user = userEvent.setup();
+    //check form page routing
+    await user.click(screen.getByText(/forms/i));
+    expect(screen.getByText(/page: forms/i)).toBeInTheDocument();
+    //check main page routing
+    await user.click(screen.getByText(/main/i));
+    expect(screen.getByText(/page: main/i)).toBeInTheDocument();
+    //check about page routing
+    await user.click(screen.getByText(/about/i));
+    expect(screen.getByText(/page: about/i)).toBeInTheDocument();
   });
 });
