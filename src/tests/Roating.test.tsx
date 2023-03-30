@@ -1,6 +1,9 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import MainPage from '../pages/MainPage';
 
-describe('Form', () => {
-  it('render Form component', () => {});
+describe('Roating', () => {
+  it('render main page', () => {
+    render(<MainPage />);
+  });
 });
