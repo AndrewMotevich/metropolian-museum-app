@@ -1,15 +1,47 @@
-import React, { ReactNode, Component } from 'react';
-import MyCard from './UI/main-card/MyCard';
+import PaintingService from '../api/PaintingService';
+import React, { useState, useEffect } from 'react';
+import { useFetching } from '../hooks/useFetching';
+import { painting } from '../types';
 
-export default class Cards extends Component {
-  getCards(): ReactNode {
-    const cardsArray: ReactNode[] = [];
-    for (let i = 0; i < 12; i += 1) {
-      cardsArray.push(<MyCard key={(i + 1).toString()} cardId={(i + 1).toString()} />);
-    }
-    return cardsArray;
-  }
-  render() {
-    return <div className="flex-layout">{this.getCards()}</div>;
-  }
-}
+const Cards = () => {
+  const paintsData: painting[] = [];
+  let responseData: number[] = [];
+  const [paints, setPaints] = useState([] as painting[]);
+  const [fetchPaintsId, isPaintsIdLoading] = useFetching(async () => {
+    await PaintingService.searchPaintings()
+      .then((response) => {
+        responseData = response.data.objectIDs;
+        responseData.length = 10;
+      })
+      .then(async () => {
+        for (let i = 0; i < responseData.length; i += 1) {
+          const response = await PaintingService.getPaintings(responseData[i]);
+          paintsData.push(response.data);
+        }
+        setPaints([...paintsData]);
+      });
+  });
+
+  useEffect(() => {
+    fetchPaintsId();
+  }, []);
+
+  return (
+    <div className="flex-layout">
+      {isPaintsIdLoading ? (
+        <div>Loading...</div>
+      ) : (
+        paints.map((elem, index) => {
+          return (
+            <div key={index} style={{ width: '200px', height: '400px', border: '1px solid black' }}>
+              <img width="200" src={elem.primaryImageSmall}></img>
+              <h2>{elem.title.slice(0, 20) + '...'}</h2>
+            </div>
+          );
+        })
+      )}
+    </div>
+  );
+};
+
+export default Cards;
