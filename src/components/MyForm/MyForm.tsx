@@ -32,7 +32,6 @@ const MyForm = () => {
   ]);
 
   const onSubmit = (data: FieldValues) => {
-    console.log('img', img);
     const newCard = {
       title: data.title,
       bthDate: data.btnDate,
@@ -48,8 +47,8 @@ const MyForm = () => {
     reader.onload = () => {
       newCard.img = reader.result as string;
       setCardsArray([...cardsArray, newCard]);
-      console.log(((image.current as HTMLImageElement).src = ''));
-      console.log(((image.current as HTMLImageElement).classList.value = 'hide'));
+      (image.current as HTMLImageElement).src = '';
+      (image.current as HTMLImageElement).classList.value = 'hide';
       reset({ title: '', btnDate: '', country: '', allow: '', sex: '', img: '' });
     };
   };
