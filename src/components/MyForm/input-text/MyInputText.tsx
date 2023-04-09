@@ -1,13 +1,16 @@
-import React from 'react';
+import { ChangeHandler, RefCallBack } from 'react-hook-form';
+
 type props = {
-  reference: React.RefObject<HTMLInputElement>;
+  inputRef: RefCallBack;
+  name: string;
+  onChange: ChangeHandler;
 };
 
-const MyInputText = ({ reference }: props) => {
+const MyInputText = ({ inputRef, name, onChange }: props) => {
   return (
     <label>
       <strong>Name:</strong>
-      <input minLength={3} type="text" ref={reference} />
+      <input type="text" ref={inputRef} name={name} onChange={onChange} />
     </label>
   );
 };

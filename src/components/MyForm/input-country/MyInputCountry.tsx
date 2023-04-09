@@ -1,13 +1,17 @@
 import React from 'react';
+import { ChangeHandler, RefCallBack } from 'react-hook-form';
+
 type props = {
-  reference: React.RefObject<HTMLSelectElement>;
+  inputRef: RefCallBack;
+  name: string;
+  onChange: ChangeHandler;
 };
 
-const MyInputCountry = ({ reference }: props) => {
+const MyInputCountry = ({ inputRef, name, onChange }: props) => {
   return (
     <label>
       <strong>Country:</strong>
-      <select ref={reference}>
+      <select ref={inputRef} name={name} onChange={onChange}>
         <option>Belarus</option>
         <option>Russia</option>
         <option>Poland</option>

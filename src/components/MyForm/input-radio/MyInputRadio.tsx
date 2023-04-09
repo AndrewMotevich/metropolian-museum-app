@@ -1,29 +1,27 @@
 import React from 'react';
+import { ChangeHandler, RefCallBack } from 'react-hook-form';
+
 type props = {
-  getSex(value: string): void;
+  inputRef: RefCallBack;
+  name: string;
+  onChange: ChangeHandler;
 };
 
-const MyInputRadio = ({ getSex }: props) => {
-  let value = '';
-  const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    value = (e.target as HTMLInputElement).value;
-    getSex(value);
-    console.log(value);
-  };
+const MyInputRadio = ({ inputRef, name, onChange }: props) => {
   return (
     <div>
       <strong>Sex:</strong>
       <br />
       <label style={{ marginRight: '10px' }}>
-        <input name="sex" type="radio" value="male" onChange={changeValue} />
+        <input type="radio" value="male" ref={inputRef} name={name} onChange={onChange} />
         male
       </label>
       <label style={{ marginRight: '10px' }}>
-        <input name="sex" type="radio" value="female" onChange={changeValue} />
+        <input type="radio" value="female" ref={inputRef} name={name} onChange={onChange} />
         female
       </label>
       <label>
-        <input name="sex" type="radio" value="other" onChange={changeValue} />
+        <input type="radio" value="other" ref={inputRef} name={name} onChange={onChange} />
         other
       </label>
     </div>

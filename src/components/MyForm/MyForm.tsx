@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import MyFormCards from './cards/MyFormCards';
 import MyInputCountry from './input-country/MyInputCountry';
 import MyInputDate from './input-date/MyInputDate';
@@ -7,17 +7,11 @@ import MyInputText from './input-text/MyInputText';
 import classes from './MyForm.module.css';
 import MyInputRadio from './input-radio/MyInputRadio';
 import MyInputFile from './input-file/MyInputFile';
-import { formCard } from './MyFormTypes';
+import { FieldValues, useForm } from 'react-hook-form';
 
 const MyForm = () => {
-  const inputTitle = useRef() as React.MutableRefObject<HTMLInputElement>;
-  const inputBthDate = useRef() as React.MutableRefObject<HTMLInputElement>;
-  const inputCountry = useRef() as React.MutableRefObject<HTMLSelectElement>;
-  const inputCheck = useRef() as React.MutableRefObject<HTMLInputElement>;
-  const inputImg = useRef() as React.MutableRefObject<HTMLImageElement>;
-  let inputSwitcher = '';
-  let inputPhoto = '';
-
+  const image = useRef() as React.RefObject<HTMLImageElement>;
+  const { register, reset, handleSubmit } = useForm();
   const [cardsArray, setCardsArray] = useState([
     {
       title: 'Andrew',
@@ -37,47 +31,46 @@ const MyForm = () => {
     },
   ]);
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
+  const onSubmit = (data: FieldValues) => {
+    console.log('img', img);
     const newCard = {
-      title: inputTitle.current.value,
-      bthDate: inputBthDate.current.value,
-      country: inputCountry.current.value,
-      allow: inputCheck.current.checked,
-      img: inputPhoto,
-      sex: inputSwitcher,
+      title: data.title,
+      bthDate: data.btnDate,
+      country: data.country,
+      allow: data.allow,
+      sex: data.sex,
+      img: '',
     };
-    if (validateFunc(newCard) === 'accept') {
+    const file = data.img.item(0);
+    if (!file) return;
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      newCard.img = reader.result as string;
       setCardsArray([...cardsArray, newCard]);
-      //clear form
-      inputTitle.current.value = '';
-      inputBthDate.current.value = '';
-      inputCountry.current.value = 'Belarus';
-      inputCheck.current.checked = false;
-      inputImg.current.src = '';
-      inputImg.current.className = classes.hide;
-    } else {
-      alert(validateFunc(newCard));
-    }
+      console.log(((image.current as HTMLImageElement).src = ''));
+      console.log(((image.current as HTMLImageElement).classList.value = 'hide'));
+      reset({ title: '', btnDate: '', country: '', allow: '', sex: '', img: '' });
+    };
   };
 
-  const getImg = (value: string): void => {
-    inputPhoto = value;
-  };
-  const getSex = (value: string): void => {
-    inputSwitcher = value;
-  };
+  const title = register('title', { required: true });
+  const btnDate = register('btnDate', { required: true });
+  const country = register('country');
+  const allow = register('allow');
+  const sex = register('sex', { required: true });
+  const img = register('img', { required: true });
 
   return (
     <div className={classes.myFormPage}>
-      <form className={classes.myForm} onSubmit={handleSubmit}>
+      <form className={classes.myForm} onSubmit={handleSubmit(onSubmit)}>
         <h2>Contacts Form</h2>
-        <MyInputText reference={inputTitle} />
-        <MyInputDate reference={inputBthDate} />
-        <MyInputCountry reference={inputCountry} />
-        <MyInputCheckbox reference={inputCheck} />
-        <MyInputRadio getSex={getSex} />
-        <MyInputFile getImg={getImg} reference={inputImg} />
+        <MyInputText inputRef={title.ref} name={title.name} onChange={title.onChange} />
+        <MyInputDate inputRef={btnDate.ref} name={btnDate.name} onChange={btnDate.onChange} />
+        <MyInputCountry inputRef={country.ref} name={country.name} onChange={country.onChange} />
+        <MyInputCheckbox inputRef={allow.ref} name={allow.name} onChange={allow.onChange} />
+        <MyInputRadio inputRef={sex.ref} name={sex.name} onChange={sex.onChange} />
+        <MyInputFile inputRef={img.ref} name={img.name} onChange={img.onChange} reference={image} />
         <input type="submit" value="Submit" />
       </form>
       <MyFormCards cardsArray={cardsArray} />
@@ -86,23 +79,3 @@ const MyForm = () => {
 };
 
 export default MyForm;
-
-function validateFunc(object: formCard) {
-  if (object.title === '') {
-    return 'Name should be start with letter and cant be empty';
-  }
-  if (object.bthDate === '') {
-    return 'Birthday cant be empty';
-  }
-  if (object.sex === '') {
-    return 'Sex cant be empty';
-  }
-  if (object.img === '') {
-    return 'Please, add img';
-  }
-  if (object.bthDate === '') {
-    return 'Birthday cant be empty';
-  } else {
-    return 'accept';
-  }
-}
