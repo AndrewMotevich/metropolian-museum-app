@@ -4,6 +4,7 @@ import { useFetching } from '../hooks/useFetching';
 import { painting } from '../types';
 import MyCard from './UI/main-card/MyCard';
 import Loading from './UI/loading/Loading';
+import { checkApiData } from '../utils/checkApiData';
 
 const Cards = () => {
   const paintsData: painting[] = [];
@@ -13,12 +14,14 @@ const Cards = () => {
     await PaintingService.searchPaintings()
       .then((response) => {
         responseData = response.data.objectIDs;
-        responseData.length = 10;
+        responseData.length = 12;
       })
       .then(async () => {
         for (let i = 0; i < responseData.length; i += 1) {
           const response = await PaintingService.getPaintings(responseData[i]);
-          paintsData.push(response.data);
+          if (checkApiData(response.data)) {
+            paintsData.push(response.data);
+          }
         }
         setPaints([...paintsData]);
       });

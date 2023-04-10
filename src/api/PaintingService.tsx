@@ -4,7 +4,7 @@ import { painting } from '../types';
 export default class PaintingService {
   static async searchPaintings() {
     const response = await axios.get(
-      'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&isOnView=true&q=Vincent'
+      'https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&isOnView=true&q=Vincent'
     );
     return response;
   }
