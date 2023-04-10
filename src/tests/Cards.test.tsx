@@ -4,7 +4,7 @@ import Cards from '../components/Cards';
 
 describe('Cards', () => {
   it('render Cards component', () => {
-    render(<Cards />);
+    render(<Cards qString={''} />);
     // expect(screen.getAllByЕуп(/MyCard #/i).length).toBeLessThanOrEqual(12);
   });
 });

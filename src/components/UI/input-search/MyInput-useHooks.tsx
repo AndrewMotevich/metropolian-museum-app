@@ -1,7 +1,9 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, Fragment, useEffect, useState } from 'react';
 import classes from './MyInput.module.css';
 type params = {
-  [key: string]: string;
+  type: string;
+  placeholder: string;
+  handler: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   'query-name': string;
 };
 
@@ -24,12 +26,19 @@ const MyInputWithHooks = (params: params) => {
   }
 
   return (
-    <input
-      {...params}
-      onChange={(e: ChangeEvent) => onChange(e)}
-      value={value}
-      className={classes.myInput}
-    />
+    <Fragment>
+      <input
+        type={params.type}
+        placeholder={params.placeholder}
+        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => params.handler(e)}
+        onChange={(e: ChangeEvent) => onChange(e)}
+        value={value}
+        className={classes.myInput}
+      />
+      <p style={{ color: 'red' }}>
+        Example of search: Statuette, Vincent Van Gogh, Paul Gauguin, Monk, The card player
+      </p>
+    </Fragment>
   );
 };
 

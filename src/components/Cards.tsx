@@ -6,15 +6,18 @@ import MyCard from './UI/main-card/MyCard';
 import Loading from './UI/loading/Loading';
 import { checkApiData } from '../utils/checkApiData';
 import Modal from './UI/modal-window/Modal';
+type params = {
+  qString: string;
+};
 
-const Cards = () => {
+const Cards = (params: params) => {
   const paintsData: painting[] = [];
   let responseData: number[] = [];
   const [elem, setElem] = useState({} as painting);
   const [modal, setModal] = useState(false);
   const [paints, setPaints] = useState([] as painting[]);
   const [fetchPaintsId, isPaintsIdLoading] = useFetching(async () => {
-    await PaintingService.searchPaintings()
+    await PaintingService.searchPaintings(params.qString)
       .then((response) => {
         responseData = response.data.objectIDs;
         responseData.length = 12;
@@ -31,8 +34,9 @@ const Cards = () => {
   });
 
   useEffect(() => {
+    setPaints([]);
     fetchPaintsId();
-  }, []);
+  }, [params.qString]);
 
   const onClickHandler = (elem: painting) => {
     setElem(elem);
@@ -42,7 +46,7 @@ const Cards = () => {
     <div className="flex-layout">
       {isPaintsIdLoading ? (
         <Loading />
-      ) : (
+      ) : paints.length !== 0 ? (
         paints.map((elem) => {
           return (
             <MyCard
@@ -53,6 +57,8 @@ const Cards = () => {
             />
           );
         })
+      ) : (
+        <div>Not found</div>
       )}
       <Modal visible={modal} setVisible={setModal} elem={elem} />
     </div>
