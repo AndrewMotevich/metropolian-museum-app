@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint": "eslint src",
     "format": "prettier --write .",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "history": "^5.3.0",
@@ -37,6 +38,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^5.0.0",
     "husky": "^8.0.3",
     "jest": "^29.5.0",
     "jest-css-modules": "^2.1.0",
