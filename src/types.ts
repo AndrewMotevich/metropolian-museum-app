@@ -10,4 +10,5 @@ export type painting = {
   artistEndDate: string;
   objectDate: string;
   objectName: string;
+  geoLocation: string;
 };

@@ -5,6 +5,8 @@ import { painting } from 'types';
 type props = {
   key: number;
   elem: painting;
+  onClickHandler: (elem: painting) => void;
+  modal: (visible: boolean) => void;
 };
 
 export default class MyCard extends Component<props> {
@@ -17,7 +19,13 @@ export default class MyCard extends Component<props> {
   }
   render() {
     return (
-      <div className={classes.myCard}>
+      <div
+        className={classes.myCard}
+        onClick={() => {
+          this.props.modal(true);
+          this.props.onClickHandler(this.elem);
+        }}
+      >
         <div
           style={{
             width: '100%',

@@ -5,10 +5,13 @@ import { painting } from '../types';
 import MyCard from './UI/main-card/MyCard';
 import Loading from './UI/loading/Loading';
 import { checkApiData } from '../utils/checkApiData';
+import Modal from './UI/modal-window/Modal';
 
 const Cards = () => {
   const paintsData: painting[] = [];
   let responseData: number[] = [];
+  const [elem, setElem] = useState({} as painting);
+  const [modal, setModal] = useState(false);
   const [paints, setPaints] = useState([] as painting[]);
   const [fetchPaintsId, isPaintsIdLoading] = useFetching(async () => {
     await PaintingService.searchPaintings()
@@ -31,15 +34,27 @@ const Cards = () => {
     fetchPaintsId();
   }, []);
 
+  const onClickHandler = (elem: painting) => {
+    setElem(elem);
+  };
+
   return (
     <div className="flex-layout">
       {isPaintsIdLoading ? (
         <Loading />
       ) : (
         paints.map((elem) => {
-          return <MyCard key={elem.objectID} elem={elem} />;
+          return (
+            <MyCard
+              key={elem.objectID}
+              elem={elem}
+              onClickHandler={onClickHandler}
+              modal={setModal}
+            />
+          );
         })
       )}
+      <Modal visible={modal} setVisible={setModal} elem={elem} />
     </div>
   );
 };

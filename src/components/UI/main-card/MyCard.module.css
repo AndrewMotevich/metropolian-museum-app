@@ -19,11 +19,9 @@
 .myCardImage:hover {
   cursor: pointer;
   scale: 1.1;
-  transition: all 0.5s ease;
 }
 .myCardImage:hover > .myCardTitle {
   visibility: visible;
-  transition: all 0.5s ease;
   bottom: 1rem;
 }
 .myCardTitle {
