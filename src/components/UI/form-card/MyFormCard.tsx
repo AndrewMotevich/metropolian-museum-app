@@ -1,12 +1,6 @@
 import React from 'react';
-type elem = {
-  title: string;
-  bthDate: string;
-  country: string;
-  img: string;
-  allow: boolean;
-  sex: string;
-};
+import { user as elem } from 'types';
+import classes from './MyFormCard.module.css';
 type props = {
   elem: elem;
   index: number;
@@ -14,24 +8,8 @@ type props = {
 
 const MyFormCard = ({ elem, index }: props) => {
   return (
-    <div
-      key={index}
-      style={{
-        width: '200px',
-        height: '200px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        background: '#121212',
-        borderRadius: '5px',
-      }}
-    >
-      <img
-        width="80px"
-        style={{ borderRadius: '5px', height: '80px', width: '80px', objectFit: 'cover' }}
-        src={elem.img}
-        alt="icon"
-      />
+    <div key={index} className={classes.myFormCard}>
+      <img width="80px" className={classes.myFormCardImg} src={elem.img} alt="icon" />
       <div>Name: {elem.title}</div>
       <div>Bth date: {elem.bthDate.split('-').reverse().join('-')}</div>
       <div>Country: {elem.country}</div>

@@ -12,3 +12,11 @@ export type painting = {
   objectName: string;
   geoLocation: string;
 };
+export type user = {
+  title: string;
+  bthDate: string;
+  country: string;
+  img: string;
+  allow: boolean;
+  sex: string;
+};

@@ -3,8 +3,8 @@ import classes from './Loading.module.css';
 
 const Loading = () => {
   return (
-    <div>
-      Loading...
+    <div className={classes.loadingWrapper}>
+      <h2>Loading...</h2>
       <div className={classes.loading}></div>
     </div>
   );

@@ -1,0 +1,15 @@
+.myFormCard{
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #121212;
+  border-radius: 5px;
+}
+.myFormCardImg
+{ border-radius: 5px; 
+  height: 80px; 
+  width: 80px; 
+  object-fit: cover 
+}

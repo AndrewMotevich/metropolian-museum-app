@@ -1,6 +1,7 @@
 .modalWrapper{
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgb(12, 12, 12, 0.9);
@@ -21,21 +22,5 @@
   right: 0;
   width: 30px;
   height: 30px;  
-  background: rgb(33, 147, 61);
   background-image: url('../../../assets/cross.svg');
-}
-.modalWindowImg{
-  width: 50%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: center;
-}
-.modalWindowLayout{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
 }

@@ -6,28 +6,52 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.flex-layout {
+/* cards container */
+.flex-center{
   max-width: inherit;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.flex-start {
+  max-width: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 1rem;
 }
+@media screen and (max-width: 1260px) {
+  .flex-start{
+   width: 900px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .flex-start{
+   width: 600px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .flex-start{
+   width: 300px;
+  }
+}
 
+/* header component */
 .myHeader {
   height: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+.headerTitle {
+  margin-left: 3.5rem
+}
 .myNavigate {
   height: inherit;
   display: flex;
   align-items: center;
   border-radius: 1rem;
 }
-
 .myNavigate > * {
   padding: 0 1rem;
   text-decoration: none;
@@ -35,8 +59,28 @@
   font-weight: bold;
   font-size: large;
 }
-
 .myNavigate > *:hover {
   color: rgba(246, 255, 0, 0.838);
   transition: all 0.5s ease-out;
+}
+@media screen and (max-width: 680px) {
+  .headerTitle {
+    margin-left: 0rem;
+  }
+  .myNavigate > * {
+    font-size: small;
+  }
+}
+
+/* input file styles */
+.hide {
+  display: none ;
+}
+.img {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: solid 1px black;
+  border-radius: 5px;
+  object-fit: cover;
 }

@@ -4,19 +4,15 @@
   box-sizing: border-box;
 }
 body {
-  /* background-image: linear-gradient(to left top, #051937, #00446a, #00749c, #00a8c8, #12dfeb); */
   background: black;
   color: grey;
   text-shadow: whitesmoke 0px 0px 1px;
 }
-.hide {
-  display: none ;
-}
-.img {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border: solid 1px black;
-  border-radius: 5px;
-  object-fit: cover;
+@media screen and (max-width: 680px) {
+  h1{
+    font-size: 1rem;
+  }
+  a {
+    font-size: 0.6rem;
+  }
 }

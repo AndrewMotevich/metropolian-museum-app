@@ -1,0 +1,17 @@
+.aboutUsWrapper{
+  width: inherit;
+  height: 100vh;
+  text-align: start;
+  display: flex;
+  justify-content: center;
+}
+.aboutUs {
+  max-width: 500px;
+  color: white;
+}
+.aboutUs > h1 {
+  text-align: center;
+}
+.aboutUs > * {
+  margin-top: 1rem;
+}

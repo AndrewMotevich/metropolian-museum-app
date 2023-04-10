@@ -30,7 +30,10 @@ const MyInputWithHooks = (params: params) => {
       <input
         type={params.type}
         placeholder={params.placeholder}
-        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => params.handler(e)}
+        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+          params.handler(e);
+          localStorage.setItem(`${params['query-name']}`, `${value}`);
+        }}
         onChange={(e: ChangeEvent) => onChange(e)}
         value={value}
         className={classes.myInput}

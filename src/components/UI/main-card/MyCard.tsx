@@ -10,12 +10,10 @@ type props = {
 };
 
 export default class MyCard extends Component<props> {
-  public readonly cardImgUrl: string;
   public readonly elem: painting;
   constructor(props: props) {
     super(props);
     this.elem = props.elem;
-    this.cardImgUrl = '../../../../public/assets/img/react.svg';
   }
   render() {
     return (
@@ -28,10 +26,7 @@ export default class MyCard extends Component<props> {
       >
         <div
           style={{
-            width: '100%',
-            height: '100%',
             backgroundImage: `url(${this.elem.primaryImageSmall})`,
-            backgroundPosition: 'center',
           }}
           className={classes.myCardImage}
         >
