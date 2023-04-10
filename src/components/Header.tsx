@@ -7,7 +7,7 @@ const Header = () => {
   const location = useLocation();
   return (
     <div className="myHeader">
-      <h1>Page: {location.pathname.slice(1)}</h1>
+      <h1 style={{ marginLeft: '3.5rem' }}>Page: {location.pathname.slice(1)}</h1>
       <MyNav />
     </div>
   );

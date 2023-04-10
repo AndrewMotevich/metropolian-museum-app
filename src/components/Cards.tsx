@@ -2,6 +2,7 @@ import PaintingService from '../api/PaintingService';
 import React, { useState, useEffect } from 'react';
 import { useFetching } from '../hooks/useFetching';
 import { painting } from '../types';
+import MyCard from './UI/main-card/MyCard';
 
 const Cards = () => {
   const paintsData: painting[] = [];
@@ -31,13 +32,8 @@ const Cards = () => {
       {isPaintsIdLoading ? (
         <div>Loading...</div>
       ) : (
-        paints.map((elem, index) => {
-          return (
-            <div key={index} style={{ width: '200px', height: '400px', border: '1px solid black' }}>
-              <img width="200" src={elem.primaryImageSmall}></img>
-              <h2>{elem.title.slice(0, 20) + '...'}</h2>
-            </div>
-          );
+        paints.map((elem) => {
+          return <MyCard key={elem.objectID} elem={elem} />;
         })
       )}
     </div>

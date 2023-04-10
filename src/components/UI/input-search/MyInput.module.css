@@ -2,14 +2,15 @@
   padding-left: 3rem;
   width: 100%;
   margin: 1rem 0rem;
-  border-radius: 2rem;
   color: grey;
-  border: 5px solid #1ceb12;
   font-size: 2rem;
+  background-color: black;
+  border: 2px solid black;
 }
 
 .myInput:focus {
-  background-color: azure;
+  background-color: #121212;
+  outline: none;
 }
 
 .myInput::placeholder {

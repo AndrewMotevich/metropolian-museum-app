@@ -4,7 +4,10 @@
   box-sizing: border-box;
 }
 body {
-  background-image: linear-gradient(to left top, #051937, #00446a, #00749c, #00a8c8, #12dfeb);
+  /* background-image: linear-gradient(to left top, #051937, #00446a, #00749c, #00a8c8, #12dfeb); */
+  background: black;
+  color: grey;
+  text-shadow: whitesmoke 0px 0px 1px;
 }
 .hide {
   display: none ;

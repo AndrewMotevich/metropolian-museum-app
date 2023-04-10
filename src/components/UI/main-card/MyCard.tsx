@@ -1,34 +1,33 @@
 import React, { Component } from 'react';
 import classes from './MyCard.module.css';
-const horsBackImage =
-  'https://cdnb.artstation.com/p/assets/images/images/049/818/407/large/sean-chi-1200px.jpg?1653401623';
+import { painting } from 'types';
+
 type props = {
-  key: string;
-  [key: string]: string;
-  cardId: string;
+  key: number;
+  elem: painting;
 };
 
 export default class MyCard extends Component<props> {
-  public readonly cardId: string;
   public readonly cardImgUrl: string;
+  public readonly elem: painting;
   constructor(props: props) {
     super(props);
-    this.cardId = props.cardId;
+    this.elem = props.elem;
     this.cardImgUrl = '../../../../public/assets/img/react.svg';
   }
   render() {
     return (
       <div className={classes.myCard}>
-        <object
-          style={{ position: 'absolute', zIndex: '-1', opacity: '0.3' }}
-          width="100%"
-          data={horsBackImage}
-        />
-        <div>MyCard #{this.cardId}</div>
-        <img className={classes.nftImage} src={this.cardImgUrl} alt="nftImage" />
-        <div className={classes.icons}>
-          <img src="../../../../public/assets/img/Like.svg" alt="like" />
-          <img src="../../../../public/assets/img/Bitcoin.svg" alt="bitcoin" />
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            backgroundImage: `url(${this.elem.primaryImageSmall})`,
+            backgroundPosition: 'center',
+          }}
+          className={classes.myCardImage}
+        >
+          <div className={classes.myCardTitle}>{this.elem.title}</div>
         </div>
       </div>
     );

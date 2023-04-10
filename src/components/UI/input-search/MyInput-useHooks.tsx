@@ -16,13 +16,11 @@ const MyInputWithHooks = (params: params) => {
     return () => {
       localStorage.setItem(`${params['query-name']}`, `${value}`);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function onChange(e: ChangeEvent) {
     const newValue = (e.target as HTMLInputElement).value;
     setValue(newValue);
-    console.log(value);
   }
 
   return (

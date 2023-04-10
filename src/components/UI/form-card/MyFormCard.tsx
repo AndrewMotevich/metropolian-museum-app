@@ -22,7 +22,8 @@ const MyFormCard = ({ elem, index }: props) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
-        border: '1px solid black',
+        background: '#121212',
+        borderRadius: '5px',
       }}
     >
       <img

@@ -1,8 +1,7 @@
 .myCard {
   width: 18rem;
   height: 25rem;
-  border-radius: 1rem;
-  border: 5px solid #1ceb12;
+  border: 20px solid #1ceb12;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -12,35 +11,29 @@
   font-weight: bold;
   font-size: 2rem;
   overflow: hidden;
-  padding-bottom: 1rem;
+  border-image: url(../../../../public/assets/img/pngwing.com.png) 500 round;
 }
-.icons {
-  width: inherit;
-  display: flex;
-  justify-content: space-around;
+.myCardImage{
+  position: relative;
 }
-.icons > * {
-  width: 3rem;
-  height: 3rem;
-}
-.icons > *:hover {
+.myCardImage:hover {
   cursor: pointer;
-  scale: 1.2;
-  transition: all 0.2s ease;
+  scale: 1.1;
+  transition: all 0.5s ease;
 }
-.nftImage {
-  width: 5rem;
+.myCardImage:hover > .myCardTitle {
+  visibility: visible;
+  transition: all 0.5s ease;
+  bottom: 1rem;
 }
-.myCard:hover > .nftImage {
-  cursor: pointer;
-  scale: 1.5;
-  animation: rotate 2s infinite linear;
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.myCardTitle {
+  width: 100%;
+  visibility: hidden;
+  background: rgb(12, 12, 12, 0.5);
+  position: absolute;
+  bottom: 0;
+  padding: 1rem 1rem;
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: bold;
 }

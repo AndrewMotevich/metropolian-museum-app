@@ -8,8 +8,9 @@
   height: 300px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   justify-content: space-between;
+  background-color: #151515;
+  border-radius: 5px;
 }
 .hide {
   display: none;

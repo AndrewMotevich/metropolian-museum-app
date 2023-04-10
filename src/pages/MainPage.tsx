@@ -5,7 +5,7 @@ import React from 'react';
 const MainPage = () => {
   return (
     <div>
-      <MyInputWithHooks query-name="search2" type="search" placeholder="Search2" />
+      <MyInputWithHooks query-name="search2" type="search" placeholder="Search" />
       <Cards />
     </div>
   );

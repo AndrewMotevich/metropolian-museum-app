@@ -21,7 +21,7 @@
   cursor: pointer;
   width: 80px;
   height: 80px;
-  border: solid 1px black;
+  border: solid 1px whitesmoke;
   border-radius: 5px;
   object-fit: cover;
   position: relative;
@@ -31,7 +31,7 @@
   position: absolute;
   width: 80px;
   height: 80px;
-  border: solid 1px black;
+  border: solid 1px whitesmoke;
   border-radius: 5px;
   object-fit: cover;
 }
