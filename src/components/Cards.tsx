@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useFetching } from '../hooks/useFetching';
 import { painting } from '../types';
 import MyCard from './UI/main-card/MyCard';
+import Loading from './UI/loading/Loading';
 
 const Cards = () => {
   const paintsData: painting[] = [];
@@ -30,7 +31,7 @@ const Cards = () => {
   return (
     <div className="flex-layout">
       {isPaintsIdLoading ? (
-        <div>Loading...</div>
+        <Loading />
       ) : (
         paints.map((elem) => {
           return <MyCard key={elem.objectID} elem={elem} />;
