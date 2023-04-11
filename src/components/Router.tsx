@@ -16,6 +16,7 @@ const Router = () => {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/forms" element={<Forms />} />
         <Route path="*" element={<Navigate to="/404" />} />
+        <Route path="/" element={<Navigate to="/main" />} />
       </Routes>
     </BrowserRouter>
   );

@@ -5,6 +5,6 @@ import Cards from '../components/Cards';
 describe('Cards', () => {
   it('render Cards component', () => {
     render(<Cards qString={''} />);
-    // expect(screen.getAllByЕуп(/MyCard #/i).length).toBeLessThanOrEqual(12);
+    expect(document.querySelector('.flex-start')?.childNodes.length).toBeLessThanOrEqual(12);
   });
 });
