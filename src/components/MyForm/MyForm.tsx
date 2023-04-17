@@ -10,7 +10,7 @@ import MyInputFile from './input-file/MyInputFile';
 import { FieldValues, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { addCard } from '../../redux/reducer';
+import { addCard } from '../../redux/formReducer';
 
 const MyForm = () => {
   const image = useRef() as React.RefObject<HTMLImageElement>;

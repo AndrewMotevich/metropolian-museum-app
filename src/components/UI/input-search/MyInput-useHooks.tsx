@@ -1,28 +1,28 @@
-import React, { ChangeEvent, Fragment, useEffect, useState } from 'react';
+import React, { ChangeEvent, Fragment, useEffect } from 'react';
 import classes from './MyInput.module.css';
+import { addSavedQstring, addCurrentQstring } from '../../../redux/searchReducer';
+import { RootState } from '../../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 type params = {
   type: string;
   placeholder: string;
-  handler: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   'query-name': string;
 };
 
 const MyInputWithHooks = (params: params) => {
-  const [value, setValue] = useState('');
+  const currentQuery = useSelector((state: RootState) => state.search.currentValue);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // initialize component
-    const savedValue = localStorage.getItem(`${params['query-name']}`) || '';
-    setValue(savedValue);
-    // unmount component
-    return () => {
-      localStorage.setItem(`${params['query-name']}`, `${value}`);
-    };
+    const savedValue = localStorage.getItem(`${params['query-name']}`) || 'Vincent';
+    dispatch(addCurrentQstring(savedValue));
+    dispatch(addSavedQstring(savedValue));
   }, []);
 
   function onChange(e: ChangeEvent) {
     const newValue = (e.target as HTMLInputElement).value;
-    setValue(newValue);
+    dispatch(addCurrentQstring(newValue));
   }
 
   return (
@@ -31,11 +31,13 @@ const MyInputWithHooks = (params: params) => {
         type={params.type}
         placeholder={params.placeholder}
         onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-          params.handler(e);
-          localStorage.setItem(`${params['query-name']}`, `${value}`);
+          if (e.key === 'Enter') {
+            localStorage.setItem(`${params['query-name']}`, `${currentQuery}`);
+            dispatch(addSavedQstring((e.target as HTMLInputElement).value));
+          }
         }}
         onChange={(e: ChangeEvent) => onChange(e)}
-        value={value}
+        value={currentQuery}
         className={classes.myInput}
       />
       <p style={{ color: 'red' }}>

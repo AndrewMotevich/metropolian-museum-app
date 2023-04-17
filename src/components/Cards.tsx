@@ -7,11 +7,11 @@ import Loading from './UI/loading/Loading';
 import { checkApiData } from '../utils/checkApiData';
 import Modal from './UI/modal-window/Modal';
 import MyModal from './MyModal/MyModal';
-type params = {
-  qString: string;
-};
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 
-const Cards = (params: params) => {
+const Cards = () => {
+  const savedQuery = useSelector((state: RootState) => state.search.savedValue);
   const [elem, setElem] = useState({} as painting);
   const [modal, setModal] = useState(false);
   const [paints, setPaints] = useState([] as painting[]);
@@ -20,7 +20,7 @@ const Cards = (params: params) => {
   const paintsData: painting[] = [];
 
   const [fetchPaintsId, isPaintsIdLoading] = useFetching(async () => {
-    await PaintingService.searchPaintings(params.qString)
+    await PaintingService.searchPaintings(savedQuery)
       .then((response) => {
         responseData = response.data.objectIDs;
         responseData.length = 12;
@@ -32,6 +32,7 @@ const Cards = (params: params) => {
             paintsData.push(response.data);
           }
         }
+        console.log('times');
         setPaints([...paintsData]);
       });
   });
@@ -39,7 +40,7 @@ const Cards = (params: params) => {
   useEffect(() => {
     setPaints([]);
     fetchPaintsId();
-  }, [params.qString]);
+  }, [savedQuery]);
 
   const onClickHandler = (elem: painting) => {
     setElem(elem);
