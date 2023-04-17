@@ -3,13 +3,19 @@ import { render, screen } from '@testing-library/react';
 import MyForm from '../components/MyForm/MyForm';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
 const img = new File(['img'], 'https://cdn-icons-png.flaticon.com/512/1088/1088537.png', {
   type: 'image/png',
 });
 
 describe('Form', () => {
   it('render Form and add card', async () => {
-    render(<MyForm />);
+    render(
+      <Provider store={store}>
+        <MyForm />
+      </Provider>
+    );
     //add name
     expect(screen.getByRole('textbox')).toBeInTheDocument();
     await userEvent.type(screen.getByRole('textbox'), 'Sofia');
