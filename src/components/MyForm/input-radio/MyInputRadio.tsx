@@ -10,7 +10,7 @@ type props = {
 const MyInputRadio = ({ inputRef, name, onChange }: props) => {
   return (
     <div>
-      <strong>Sex:</strong>
+      <strong>Gender:</strong>
       <br />
       <label style={{ marginRight: '10px' }}>
         <input type="radio" value="male" ref={inputRef} name={name} onChange={onChange} />
