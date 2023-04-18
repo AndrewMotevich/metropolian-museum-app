@@ -11,9 +11,11 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 
 const Cards = () => {
-  const savedQuery = useSelector((state: RootState) => state.search.savedValue);
-  const [elem, setElem] = useState({} as painting);
   const [modal, setModal] = useState(false);
+
+  const savedQuery = useSelector((state: RootState) => state.search.savedValue);
+
+  const [elem, setElem] = useState({} as painting);
   const [paints, setPaints] = useState([] as painting[]);
 
   let responseData: number[] = [];
