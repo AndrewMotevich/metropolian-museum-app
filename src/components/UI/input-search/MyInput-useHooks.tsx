@@ -10,12 +10,12 @@ type params = {
 };
 
 const MyInputWithHooks = (params: params) => {
+  const savedValue = localStorage.getItem(`${params['query-name']}`) || 'Vincent';
   const currentQuery = useSelector((state: RootState) => state.search.currentValue);
   const dispatch = useDispatch();
 
   useEffect(() => {
     // initialize component
-    const savedValue = localStorage.getItem(`${params['query-name']}`) || 'Vincent';
     dispatch(addCurrentQstring(savedValue));
     dispatch(addSavedQstring(savedValue));
   }, []);

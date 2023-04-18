@@ -1,37 +1,37 @@
 import React, { Fragment, useEffect } from 'react';
 import classes from './MyModal.module.css';
-import { painting } from 'types';
-type props = {
-  elem: painting;
-};
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
-const MyModal = (props: props) => {
-  useEffect(() => {}, [props.elem]);
+const MyModal = () => {
+  const { modalObject } = useSelector((state: RootState) => state.search);
+
+  useEffect(() => {}, []);
   return (
     <Fragment>
       <div className={classes.modalWindowLayout}>
         <div
           className={classes.modalWindowImg}
           style={{
-            backgroundImage: `url(${props.elem.primaryImage})`,
+            backgroundImage: `url(${modalObject.primaryImage})`,
           }}
         ></div>
         <ul className={classes.modalWindowList}>
           <li>
-            <span>Object name:</span> {props.elem.title}
+            <span>Object name:</span> {modalObject.title}
           </li>
           <li>
-            <span>Object type:</span> {props.elem.objectName}
+            <span>Object type:</span> {modalObject.objectName}
           </li>
           <li>
-            <span>Artist name:</span> {props.elem.artistDisplayName}
+            <span>Artist name:</span> {modalObject.artistDisplayName}
           </li>
           <li>
-            <span>Artist nationality:</span> {props.elem.artistNationality}
+            <span>Artist nationality:</span> {modalObject.artistNationality}
           </li>
           <li>
-            <span>Artist years of life:</span> {props.elem.artistBeginDate}-
-            {props.elem.artistEndDate}
+            <span>Artist years of life:</span> {modalObject.artistBeginDate}-
+            {modalObject.artistEndDate}
           </li>
         </ul>
       </div>

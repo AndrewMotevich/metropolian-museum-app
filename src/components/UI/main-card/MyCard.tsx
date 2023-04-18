@@ -1,38 +1,51 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classes from './MyCard.module.css';
-import { painting } from 'types';
+import Loading from '../loading/Loading';
+import { useGetPaintingQuery } from '../../../api/RTKpaintingService';
+import { useDispatch } from 'react-redux';
+import { addModalObject } from '../../../redux/searchReducer';
 
 type props = {
   key: number;
-  elem: painting;
-  onClickHandler: (elem: painting) => void;
+  elem: number;
   modal: (visible: boolean) => void;
 };
 
-export default class MyCard extends Component<props> {
-  public readonly elem: painting;
-  constructor(props: props) {
-    super(props);
-    this.elem = props.elem;
-  }
-  render() {
-    return (
-      <div
-        className={classes.myCard}
-        onClick={() => {
-          this.props.modal(true);
-          this.props.onClickHandler(this.elem);
-        }}
-      >
+const MyCard = (props: props) => {
+  const dispatch = useDispatch();
+  const { data, error, isLoading } = useGetPaintingQuery(props.elem);
+
+  return (
+    <div
+      className={classes.myCard}
+      onClick={() => {
+        props.modal(true);
+        if (!isLoading && data !== undefined) {
+          dispatch(addModalObject(data));
+        }
+      }}
+    >
+      {isLoading ? (
+        <Loading />
+      ) : error ? (
+        <div>Error to fetch data</div>
+      ) : (
         <div
           style={{
-            backgroundImage: `url(${this.elem.primaryImageSmall})`,
+            background: 'white',
+            backgroundImage: `url(${
+              data?.primaryImageSmall
+                ? data?.primaryImageSmall
+                : '../../../../public/assets/img/no-image-icon.png'
+            })`,
           }}
           className={classes.myCardImage}
         >
-          <div className={classes.myCardTitle}>{this.elem.title}</div>
+          <div className={classes.myCardTitle}>{data?.title}</div>
         </div>
-      </div>
-    );
-  }
-}
+      )}
+    </div>
+  );
+};
+
+export default MyCard;

@@ -1,6 +1,21 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { painting } from 'types';
 
-const initialState = { savedValue: '', currentValue: '' };
+const modalObject: painting = {
+  title: '',
+  objectID: 0,
+  primaryImage: '',
+  primaryImageSmall: '',
+  artistDisplayName: '',
+  artistDisplayBio: '',
+  artistNationality: '',
+  artistBeginDate: '',
+  artistEndDate: '',
+  objectDate: '',
+  objectName: '',
+  geoLocation: '',
+};
+const initialState = { savedValue: '', currentValue: '', modalObject: modalObject };
 
 export const searchSlice = createSlice({
   name: 'search',
@@ -12,8 +27,11 @@ export const searchSlice = createSlice({
     addCurrentQstring: (state, action: PayloadAction<string>) => {
       state.currentValue = action.payload;
     },
+    addModalObject: (state, action: PayloadAction<painting>) => {
+      state.modalObject = action.payload;
+    },
   },
 });
 
-export const { addSavedQstring, addCurrentQstring } = searchSlice.actions;
+export const { addSavedQstring, addCurrentQstring, addModalObject } = searchSlice.actions;
 export default searchSlice.reducer;
