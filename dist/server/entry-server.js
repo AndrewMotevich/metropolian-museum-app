@@ -559,11 +559,25 @@ const store = configureStore({
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(paintingApi.middleware)
 });
+if (typeof window !== "undefined") {
+  const preloadedStateFromWindow = window.__PRELOADED_STATE__ || void 0;
+  configureStore({
+    reducer: {
+      form: formReducer,
+      search: searchReducer,
+      [paintingApi.reducerPath]: paintingApi.reducer
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(paintingApi.middleware),
+    preloadedState: preloadedStateFromWindow
+  });
+  delete window.__PRELOADED_STATE__;
+}
 function render() {
-  const html = ReactDOMServer.renderToPipeableStream(
+  const storeState = store.getState();
+  const { pipe } = ReactDOMServer.renderToPipeableStream(
     /* @__PURE__ */ jsx(Provider, { store, children: /* @__PURE__ */ jsx(App, {}) })
   );
-  return { html };
+  return { pipe, storeState };
 }
 export {
   render
