@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { painting } from 'types';
+import { painting } from '../types';
 
 export const paintingApi = createApi({
   reducerPath: 'paintingApi',

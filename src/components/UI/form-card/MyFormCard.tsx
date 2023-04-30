@@ -1,5 +1,5 @@
 import React from 'react';
-import { user as elem } from 'types';
+import { user as elem } from '../../../types';
 import classes from './MyFormCard.module.css';
 type props = {
   elem: elem;

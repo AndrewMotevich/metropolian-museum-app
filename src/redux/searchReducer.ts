@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { painting } from 'types';
+import { painting } from '../types';
 
 const modalObject: painting = {
   title: '',
