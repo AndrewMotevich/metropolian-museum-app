@@ -1,5 +1,9 @@
 import fs from 'node:fs/promises';
 import express from 'express';
+import path, { dirname } from 'node:path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production';
@@ -49,29 +53,15 @@ app.use('*', async (req, res) => {
       render = (await import('./dist/server/entry-server.js')).render;
     }
 
-    const rendered = await render(url, ssrManifest);
-
-    // add redux store
-    const preloadedState = rendered.storeState;
-
-    const reduxStore = `<script> window.__PRELOADED_STATE__ = ${JSON.stringify(
-      preloadedState
-    ).replace(/</g, '\\u003c')}</script>`;
-
-    console.log(rendered.pipe);
-
-    const html = template
-      .replace(`<!--app-head-->`, rendered.head ?? '')
-      .replace(`<!--app-redux-state-->`, reduxStore ?? '')
-      .replace(`<!--app-html-->`, rendered.html ?? '');
-
-    res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
+    await render(req, res, url);
   } catch (e) {
     vite?.ssrFixStacktrace(e);
     console.log(e.stack);
     res.status(500).end(e.stack);
   }
 });
+
+app.use(express.static(path.resolve(__dirname, '.', 'dist')));
 
 // Start http server
 app.listen(port, () => {

@@ -1,7 +1,7 @@
 .myCard {
   width: 18rem;
   height: 25rem;
-  border: 20px solid #1ceb12;
+  /* border: 20px solid #1ceb12; */
   position: relative;
   display: flex;
   flex-direction: column;

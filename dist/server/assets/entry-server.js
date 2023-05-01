@@ -4,8 +4,9 @@ import { useEffect, Fragment, useState, useRef } from "react";
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 import { useSelector, useDispatch, Provider } from "react-redux";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Link, useLocation, BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Link, useLocation, Routes, Route, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { StaticRouter } from "react-router-dom/server.mjs";
 const jsx = jsxRuntime.jsx;
 const jsxs = jsxRuntime.jsxs;
 const App$1 = "";
@@ -90,9 +91,9 @@ const MyInputWithHooks = (params) => {
     /* @__PURE__ */ jsx("p", { style: { color: "red" }, children: "Example of search: Statuette, Vincent Van Gogh, Paul Gauguin, Monk, The card player" })
   ] });
 };
-const myCard = "_myCard_4vbv2_1";
-const myCardImage = "_myCardImage_4vbv2_31";
-const myCardTitle = "_myCardTitle_4vbv2_51";
+const myCard = "_myCard_9mha7_1";
+const myCardImage = "_myCardImage_9mha7_31";
+const myCardTitle = "_myCardTitle_9mha7_51";
 const classes$7 = {
   myCard,
   myCardImage,
@@ -536,7 +537,7 @@ const Forms = () => {
   return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(MyForm, {}) });
 };
 const Router = () => {
-  return /* @__PURE__ */ jsxs(BrowserRouter, { children: [
+  return /* @__PURE__ */ jsxs("div", { children: [
     /* @__PURE__ */ jsx(Header, {}),
     /* @__PURE__ */ jsxs(Routes, { children: [
       /* @__PURE__ */ jsx(Route, { path: "/404", element: /* @__PURE__ */ jsx(Page404, {}) }),
@@ -559,25 +560,26 @@ const store = configureStore({
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(paintingApi.middleware)
 });
-if (typeof window !== "undefined") {
-  const preloadedStateFromWindow = window.__PRELOADED_STATE__ || void 0;
-  configureStore({
-    reducer: {
-      form: formReducer,
-      search: searchReducer,
-      [paintingApi.reducerPath]: paintingApi.reducer
-    },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(paintingApi.middleware),
-    preloadedState: preloadedStateFromWindow
-  });
-  delete window.__PRELOADED_STATE__;
-}
-function render() {
-  const storeState = store.getState();
-  const { pipe } = ReactDOMServer.renderToPipeableStream(
-    /* @__PURE__ */ jsx(Provider, { store, children: /* @__PURE__ */ jsx(App, {}) })
+function render(req, res, url) {
+  const stream = ReactDOMServer.renderToPipeableStream(
+    /* @__PURE__ */ jsxs("html", { lang: "en", children: [
+      /* @__PURE__ */ jsxs("head", { children: [
+        /* @__PURE__ */ jsx("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
+        /* @__PURE__ */ jsx("link", { rel: "icon", type: "image/svg+xml", href: "/src/assets/react.svg" }),
+        /* @__PURE__ */ jsx("link", { rel: "stylesheet", href: "../dist/client/assets/index.css" }),
+        /* @__PURE__ */ jsx("title", { children: "React components" })
+      ] }),
+      /* @__PURE__ */ jsx("body", { children: /* @__PURE__ */ jsx("div", { id: "root", children: /* @__PURE__ */ jsx(Provider, { store, children: /* @__PURE__ */ jsx(StaticRouter, { location: url, children: /* @__PURE__ */ jsx(App, {}) }) }) }) })
+    ] }),
+    {
+      bootstrapModules: ["../dist/client/assets/index.js"],
+      onShellReady() {
+        res.setHeader("content-type", "text/html");
+        stream.pipe(res);
+      }
+    }
   );
-  return { pipe, storeState };
+  return stream;
 }
 export {
   render
