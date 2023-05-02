@@ -12,10 +12,6 @@ const base = process.env.BASE || '/';
 
 // Cached production assets
 const templateHtml = isProduction ? await fs.readFile('./dist/client/index.html', 'utf-8') : '';
-const ssrManifest = isProduction
-  ? await fs.readFile('./dist/client/ssr-manifest.json', 'utf-8')
-  : undefined;
-
 // Create http server
 const app = express();
 
@@ -49,8 +45,9 @@ app.use('*', async (req, res) => {
       template = await vite.transformIndexHtml(url, template);
       render = (await vite.ssrLoadModule('/src/entry-server.tsx')).render;
     } else {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       template = templateHtml;
-      render = (await import('./dist/server/entry-server.js')).render;
+      render = (await import('./dist/server/assets/entry-server')).render;
     }
 
     await render(req, res, url);
