@@ -564,6 +564,7 @@ function render(req, res, url) {
   const stream = ReactDOMServer.renderToPipeableStream(
     /* @__PURE__ */ jsxs("html", { lang: "en", children: [
       /* @__PURE__ */ jsxs("head", { children: [
+        /* @__PURE__ */ jsx("meta", { charSet: "UTF-8" }),
         /* @__PURE__ */ jsx("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
         /* @__PURE__ */ jsx("link", { rel: "icon", type: "image/svg+xml", href: "/src/assets/react.svg" }),
         /* @__PURE__ */ jsx("link", { rel: "stylesheet", href: "../dist/client/assets/index.css" }),
