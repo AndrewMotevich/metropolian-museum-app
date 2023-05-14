@@ -1,0 +1,22 @@
+.myFormPage {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+.myForm {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #151515;
+  border-radius: 5px;
+}
+.hide {
+  display: none;
+}
+@media screen and (max-width: 680px) {
+  .myForm {
+    width: 300px;
+  }
+}

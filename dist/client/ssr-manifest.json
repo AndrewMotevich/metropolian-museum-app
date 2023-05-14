@@ -1,0 +1,547 @@
+{
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react-dom/cjs/react-dom.production.min.js?commonjs-exports": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react-dom/client.js?commonjs-exports": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react-dom/index.js?commonjs-module": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react-is/cjs/react-is.production.min.js?commonjs-exports": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react-is/index.js?commonjs-module": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react-redux/node_modules/react-is/cjs/react-is.production.min.js?commonjs-exports": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react-redux/node_modules/react-is/index.js?commonjs-module": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react/cjs/react-jsx-runtime.production.min.js?commonjs-exports": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react/cjs/react.production.min.js?commonjs-exports": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react/index.js?commonjs-module": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/react/jsx-runtime.js?commonjs-module": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/scheduler/cjs/scheduler.production.min.js?commonjs-exports": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/scheduler/index.js?commonjs-module": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.min.js?commonjs-exports": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.production.min.js?commonjs-exports": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/use-sync-external-store/shim/index.js?commonjs-module": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000C:/Users/Andrew/Documents/2_JS Projects/RSSchool/03_React/01_React-components/node_modules/use-sync-external-store/shim/with-selector.js?commonjs-module": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000commonjsHelpers.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000react/jsx-runtime": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "\u0000vite/modulepreload-polyfill": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "index.html": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/@babel/runtime/helpers/esm/defineProperty.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/@babel/runtime/helpers/esm/objectSpread2.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/@babel/runtime/helpers/esm/toPrimitive.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/@babel/runtime/helpers/esm/toPropertyKey.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/@babel/runtime/helpers/esm/typeof.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.esm.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/@reduxjs/toolkit/dist/query/rtk-query.esm.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/@remix-run/router/dist/router.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/immer/dist/immer.esm.mjs": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-dom/cjs/react-dom.production.min.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-dom/client.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-dom/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-hook-form/dist/index.esm.mjs": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-is/cjs/react-is.production.min.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-is/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/components/Context.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/components/Provider.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/hooks/useDispatch.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/hooks/useReduxContext.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/hooks/useSelector.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/hooks/useStore.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/utils/Subscription.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/utils/batch.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/utils/shallowEqual.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/es/utils/useSyncExternalStore.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/node_modules/react-is/cjs/react-is.production.min.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-redux/node_modules/react-is/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-router-dom/dist/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react-router/dist/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react/cjs/react-jsx-runtime.production.min.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react/cjs/react.production.min.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/react/jsx-runtime.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/redux-thunk/es/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/redux/es/redux.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/reselect/es/defaultMemoize.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/reselect/es/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/scheduler/cjs/scheduler.production.min.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/scheduler/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.min.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.production.min.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/use-sync-external-store/shim/index.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "node_modules/use-sync-external-store/shim/with-selector.js": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/App.css": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/App.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/api/RTKpaintingService.ts": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/assets/styles/404page.css": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/assets/styles/AboutUsPage.css": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/Cards.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/Header.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/MyForm.module.css?used": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/MyForm.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/cards/MyFormCards.module.css?used": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/cards/MyFormCards.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/input-checkbox/MyInputCheckbox.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/input-country/MyInputCountry.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/input-date/MyInputDate.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/input-file/MyInput.module.css?used": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/input-file/MyInputFile.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/input-radio/MyInputRadio.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyForm/input-text/MyInputText.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyModal/MyModal.module.css?used": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/MyModal/MyModal.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/Router.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/form-card/MyFormCard.module.css?used": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/form-card/MyFormCard.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/input-search/MyInput-useHooks.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/input-search/MyInput.module.css?used": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/loading/Loading.module.css?used": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/loading/Loading.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/main-card/MyCard.module.css?used": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/main-card/MyCard.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/modal-window/Modal.module.css?used": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/modal-window/Modal.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/components/UI/navigation/MyNav.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/entry-client.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/index.css": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/pages/AboutUs.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/pages/Forms.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/pages/MainPage.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/pages/Page404.tsx": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/redux/formReducer.ts": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/redux/searchReducer.ts": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ],
+  "src/redux/store.ts": [
+    "/assets/search.svg",
+    "/assets/cross.svg",
+    "/assets/pngwing.com.png"
+  ]
+}

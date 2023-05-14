@@ -1,0 +1,32 @@
+.myInput {
+  padding-left: 3rem;
+  width: 100%;
+  margin: 1rem 0rem;
+  color: grey;
+  font-size: 2rem;
+  background-color: black;
+  border: 2px solid black;
+}
+
+.myInput:focus {
+  background-color: #121212;
+  outline: none;
+}
+
+.myInput::placeholder {
+  padding-left: 3rem;
+  background-image: url('../../../assets/search.svg');
+  background-position: -0.9rem;
+  background-size: 4.5rem;
+  background-repeat: no-repeat;
+}
+
+.myInput::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.6rem;
+  background-image: url('../../../assets/cross.svg');
+  cursor: pointer;
+}

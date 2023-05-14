@@ -1,0 +1,38 @@
+.modalWindowImg{
+  width: 50%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+.modalWindowLayout{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.modalWindowList{
+  margin-left: 1rem;
+  text-align: left;
+  list-style-type: none;
+  font-size: 2rem;
+  color: yellow;
+}
+.modalWindowList > li > span {
+  color: grey
+}
+@media screen and (max-width: 980px) {
+  .modalWindowList {
+    font-size: small;
+  }
+  .modalWindowLayout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
